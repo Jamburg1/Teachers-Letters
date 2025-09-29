@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letter for Teacher 1</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: #fdf6f0;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #f4a261, #e76f51);
+      padding: 12px;
+      text-align: center;
+    }
+    header a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+    }
+    header a:hover {
+      text-decoration: underline;
+    }
+    .card {
+      max-width: 700px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      display: none; /* hidden until code entered */
+    }
+    h1 {
+      color: #e07a5f;
+    }
+    .posted-by {
+      margin-top: 15px;
+      font-size: 0.95rem;
+      color: #666;
+      font-style: italic;
+    }
+    .code-box {
+      max-width: 400px;
+      margin: 100px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 70%;
+      margin-bottom: 10px;
+    }
+    button {
+      background: #e76f51;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    button:hover {
+      background: #d65a40;
+    }
+    .error {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="..html">Home</a>
+    <a href="t.html">Letters</a>
+  </header>
+
+  <!-- Code Entry -->
+  <div id="codeBox" class="code-box">
+    <h2>Enter Access Code</h2>
+    <input type="password" id="codeInput" placeholder="Enter code here">
+    <br>
+    <button onclick="checkCode()">Submit</button>
+    <div id="errorMsg" class="error"></div>
+  </div>
+
+  <!-- Teacher Letter (hidden at first) -->
+  <div id="letterCard" class="card">
+    <h1>Happy Teacher’s Day, Teacher 1!</h1>
+    <p>
+      Thank you for your patience, kindness, and wisdom. You guide us not only in lessons but also in life, 
+      and we will always be grateful for the values you’ve instilled in us.
+    </p>
+    <div class="posted-by">Posted by: Jam Angelo</div>
+  </div>
+
+  <script>
+    function checkCode() {
+      const correctCode = "TCHR1"; // ← you can set any code here
+      const userCode = document.getElementById("codeInput").value;
+      const errorMsg = document.getElementById("errorMsg");
+      
+      if (userCode === correctCode) {
+        document.getElementById("codeBox").style.display = "none";
+        document.getElementById("letterCard").style.display = "block";
+      } else {
+        errorMsg.textContent = "Incorrect code. Please try again.";
+      }
+    }
+  </script>
+</body>
+</html>
